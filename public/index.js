@@ -19,8 +19,16 @@ function populateTotal() {
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value);
   }, 0);
-
+  let balanceColor = "green";
+  if (total < 0) {
+    balanceColor = "red";
+  } else {
+    balanceColor = "green";
+  }
+// if balance is less than zero, then text color = red
+// other
   let totalEl = document.querySelector("#total");
+  document.getElementById("total").style.color = balanceColor;
   totalEl.textContent = total;
 }
 
@@ -33,7 +41,7 @@ function populateTable() {
     let tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
+      <td id="thamount">${transaction.value}</td>
     `;
 
     tbody.appendChild(tr);
@@ -69,9 +77,9 @@ function populateChart() {
       data: {
         labels,
         datasets: [{
-            label: "Total Over Time",
+            label: "Balance Over Time",
             fill: true,
-            backgroundColor: "#6666ff",
+            backgroundColor: "#f5b042",
             data
         }]
     }

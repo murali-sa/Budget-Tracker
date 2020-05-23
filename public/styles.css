@@ -13,11 +13,16 @@ body {
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #011533;
     text-align: left;
-    padding: 8px;
+    color: rgb(14, 63, 92);
+    padding: 4px;
   }
   
+  #thamount {
+    text-align: right;
+  }
+
   tr:nth-child(even) {
     background-color: #dddddd;
   }
