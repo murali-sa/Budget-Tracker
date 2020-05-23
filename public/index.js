@@ -28,6 +28,7 @@ function populateTotal() {
 // if balance is less than zero, then text color = red
 // other
   let totalEl = document.querySelector("#total");
+  console.log("total: ", total);
   document.getElementById("total").style.color = balanceColor;
   totalEl.textContent = total;
 }
@@ -73,7 +74,7 @@ function populateChart() {
   let ctx = document.getElementById("myChart").getContext("2d");
 
   myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
       data: {
         labels,
         datasets: [{
